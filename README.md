@@ -1,2 +1,2 @@
-# noa
-Noa Asistente para Raspberry
+# N.O.A
+Asistente de voz para Raspberry
