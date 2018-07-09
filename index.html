@@ -8,6 +8,10 @@
 <meta charset="utf-8" />
 <title>Título del documento</title>
 
+<meta content="david chivato de la fuente" name="author" />
+<meta content="N.O.A Asistente" name="description" />
+<meta content="etiqueta1, etiqueta2, etiqueta3" name="keywords" />
+
  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
 </head>
 <body>
@@ -18,8 +22,7 @@ window.open('hector.php?voz='+voz);}
 if (annyang) {
 annyang.setLanguage('es-ES');
 var commands = {
- 'Antonia *voz' : openPage,
- 'Manolo *voz' : openPage
+ 'Noa *voz' : openPage
  };
 annyang.addCommands(commands);
 annyang.start();
