@@ -17,12 +17,12 @@
 <body>
 <script>
 function openPage(voz){
-window.open('process-voice.php?voz='+voz);}
+window.open('./process/process-voice.php?voz='+voz);}
 
 if (annyang) {
 annyang.setLanguage('es-ES');
 var commands = {
- 'Noa *voz' : openPage
+ 'Antonia *voz' : openPage
  };
 annyang.addCommands(commands);
 annyang.start();
