@@ -1,1 +1,9 @@
-*.agdai
+/bin/
+/manifest.mf
+/nbproject/
+*nbproject*
+/build/
+/dist/
+lib/.DS_Store
+*.DS_Store
+/nbproject/private/
