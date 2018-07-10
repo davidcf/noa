@@ -6,8 +6,8 @@ $database_name = "noa.db";
 $db = new SQLite3($database_name);
 
 // Create Tables into Database if not exists 
-//$query = "DROP TABLE actions";
-//$query = "CREATE TABLE IF NOT EXISTS actions (mandate1 STRING, mandate2 STRING, mandate3 STRING, action STRING, answer STRING)";
+//$query = "DROP TABLE students";
+$query = "CREATE TABLE IF NOT EXISTS actions (mandate1 STRING, mandate2 STRING, mandate3 STRING, action STRING, answer STRING)";
 $db->exec($query);
 
 ?>
