@@ -1,5 +1,5 @@
 <?php
-$message = ""; // initial message 
+$message = "";
 
 // Includs database connection
 include "db_connect.php";

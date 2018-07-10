@@ -33,7 +33,7 @@ a, a:hover, a:focus {
 
 .navbar {
     padding: 10px 2px 0px 1px;
-    background: #3369ad;
+    background: #000;
     border: none;
     border-radius: 4;
     margin-bottom: 20px;
@@ -60,7 +60,7 @@ i, span {
 
 #menu a.active {
 	background:#fff;
-	color:#3369ad;
+	color:#000;
 }
 
 #menunav a:hover {
@@ -72,7 +72,7 @@ i, span {
 }
 
 .bg-4 { 
-    background-color: #3369ad;
+    background-color: #000;
     color: #ffffff;
     font-size: 0.8em;
 }
@@ -125,7 +125,7 @@ table tr th :last-child, table tr td :last-child {
 .jumbotron {
 	padding: 10px 40px 20px 30px;
     border-radius: 24;
-    border: 1px solid #3369ad;
+    border: 1px solid #000;
     color: #000;
 }
 
@@ -140,7 +140,7 @@ table tr th :last-child, table tr td :last-child {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #3369ad;
+    background: #000;
     color: #fff;
     transition: all 0.3s;
 }
@@ -182,7 +182,7 @@ table tr th :last-child, table tr td :last-child {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #3369ad;
+    background: #000;
     
 }
 
@@ -194,7 +194,7 @@ table tr th :last-child, table tr td :last-child {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #3369ad; /* borde menu izquierda*/
+    border-bottom: 1px solid #000; /* borde menu izquierda*/
 }
 
 #sidebar ul li a {
@@ -203,7 +203,7 @@ table tr th :last-child, table tr td :last-child {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #3369ad; /*Menu izquierda */
+    color: #000; /*Menu izquierda */
     background: #fff;
 }
 #sidebar ul li a i {
@@ -213,7 +213,7 @@ table tr th :last-child, table tr td :last-child {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #3369ad;
+    background: #000;
 }
 
 a.download {

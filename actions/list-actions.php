@@ -21,7 +21,7 @@ $result = $db->query($query);
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>N.O.A. - Configurations</title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
-        <link rel='stylesheet' href='../css/style.css'>
+        <link rel='stylesheet' href='../css/styles.css'>
     </head>
     <body>
 
@@ -29,75 +29,56 @@ $result = $db->query($query);
             <!-- Sidebar Holder -->
             <nav id='sidebar'>
                 <div class='sidebar-header'>
-                    <img src="img/urban.png" class="img-thumbnail" alt="urbancode">
+                    <img src="../img/noa.png" class="img-thumbnail" alt="N.O.A. Project">
                 </div>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="index.html"><i class="glyphicon glyphicon-th-list"></i>Aplicaciones</a></li>
-                    <li><a href="help.html"><i class="glyphicon glyphicon-cog"></i>Componentes</a></li>
+                    <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
+                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
+                    <li><a href="license.html"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
             </nav>
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h2 class="display-3">Hello, world!</h2>
-                    <p class="lead"><small>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</small></p>
-                    <button type='button' class='btn btn-primary navbar-btn' >
-                        <span><a  href='#myModal' data-toggle='modal'><strong> Información</strong></a></span>
-                    </button>
-
+                    <h3 class="display-3">N.O.A.</h3>
+                    <p class="lead"><small>Multi-platform voice assistant.</small></p>
                 </div>
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                     <ul  class='nav navbar-nav navbar-right'>
-                        <span id="lastupdate" class="label label-primary"><i class="glyphicon glyphicon-calendar"></i> Aug 28, 2017 12:38:24 PM</span>
+                        <span id="lastupdate" class="label label-primary">Aug 28, 2017 12:38:24 PM</span>
                     </ul>
                 </div>                
-                <h1>Typography</h1>
-                <p>
-                <p>
-                <p>
-
-                <p>
-                <table>
-                    <thead>
-                        <tr><th>Option</th><th>Description</th></tr>
-                    </thead>
-                    <tbody  class="buscar">
-                        <tr><td>data</td><td>path to data files to supply the data that will be passed into templates.</td></tr>
-                        <tr><td>engine</td><td>engine to be used for processing templates. Handlebars is the default.</td></tr>
-                        <tr><td>ext</td><td>extension to be used for dest files.</td></tr>
-                    </tbody>
-                </table>
-
-
-<table">
-  <thead>
-    <tr>
-      <th scope="col">Mandate 1</th>
-      <th scope="col">Mandate 2</th>
-      <th scope="col">Mandate 3</th>
-      <th scope="col">Action</th>
-      <th scope="col">Answer</th>
-      <th scope="col">Options</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php while($row = $result->fetchArray()) {?>
-    <tr>
-      <td><?php echo $row['mandate1'];?></td>
-      <td><?php echo $row['mandate2'];?></td>
-      <td><?php echo $row['mandate3'];?></td>
-      <td><?php echo $row['action'];?></td>
-      <td><?php echo $row['answer'];?></td>
-	  <td><a class="btn btn-success" href="update-action.php?id=<?php echo $row['rowid'];?>" role="button">Edit</a> <a class="btn btn-danger" href="delete-action.php?id=<?php echo $row['rowid'];?>" onclick="return confirm('Are you sure delete action?');">Delete</a></td>
-    </tr>
-    <?php } ?>
-  </tbody>
-</table>
-
-
-                <h2>Headings</h2>
+                <h2>List of actions</h2>
                 <hr />
-                <p>Headings from <code>h1</code> through <code>h6</code> are constructed with a <code>#</code> for each level:</p>
+                <p>List of actions to be carried out by N.O.A</p>
+
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Mandate 1</th>
+                      <th scope="col">Mandate 2</th>
+                      <th scope="col">Mandate 3</th>
+                      <th scope="col">Action</th>
+                      <th scope="col">Answer</th>
+                      <th scope="col">Options</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php while($row = $result->fetchArray()) {?>
+                    <tr>
+                      <td><?php echo $row['mandate1'];?></td>
+                      <td><?php echo $row['mandate2'];?></td>
+                      <td><?php echo $row['mandate3'];?></td>
+                      <td><?php echo $row['action'];?></td>
+                      <td><?php echo $row['answer'];?></td>
+                          <td><a class="btn btn-success btn-sm" href="update-action.php?id=<?php echo $row['rowid'];?>" role="button">Edit</a> <a class="btn btn-danger btn-sm" href="delete-action.php?id=<?php echo $row['rowid'];?>" onclick="return confirm('Are you sure delete action?');">Delete</a></td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
 
             </div>
 
@@ -109,8 +90,8 @@ $result = $db->query($query);
             <div class="footer-copyright">
                 <div class="container-fluid">
                     <p></p>
-                    <smal> © 2017 Copyright Produccion Central Web / UrbanCode</small>
-                        <p></p>
+                    <smal> © 2018 Destroyer Factory - N.O.A. Project</small>
+                    <p></p>
                 </div>
             </div>
             <!--/.Copyright-->
