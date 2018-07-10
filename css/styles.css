@@ -1,0 +1,242 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05-nov-2017, 0:47:16
+    Author     : destroyer
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700');
+
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: #fff;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.0em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 10px 2px 0px 1px;
+    background: #3369ad;
+    border: none;
+    border-radius: 4;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+    
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+i, span {
+    display: inline-block;
+}
+
+#menu a.active {
+	background:#fff;
+	color:#3369ad;
+}
+
+#menunav a:hover {
+	color:#000;
+}
+
+#menunav ul li a {
+	color:#fff;
+}
+
+.bg-4 { 
+    background-color: #3369ad;
+    color: #ffffff;
+    font-size: 0.8em;
+}
+
+#lastupdate {
+	font-family:sans-serif;
+	font-size:0.7em; 
+	font-weight: normal;
+	padding:6px 6px 6px 6px;
+}
+
+table {
+  padding: 0;
+  border-collapse: collapse; 
+  /*width: 100%;*/
+}
+
+table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; 
+}
+
+table tr:nth-child(2n) {
+    background-color: #f8f8f8; 
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    margin: 0;
+    padding: 6px 13px; 
+}
+    
+table tr td {
+    border: 1px solid #cccccc;
+    margin: 0;
+    padding: 6px 13px; 
+}
+
+table tr th :first-child, table tr td :first-child {
+    margin-top: 0; 
+}
+    
+table tr th :last-child, table tr td :last-child {
+    margin-bottom: 0; 
+}
+
+.jumbotron {
+	padding: 10px 40px 20px 30px;
+    border-radius: 24;
+    border: 1px solid #3369ad;
+    color: #000;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #3369ad;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
+    display: none;
+}
+
+#sidebar.active .sidebar-header strong {
+    display: block;
+}
+
+#sidebar ul li a {
+    text-align: left;
+}
+
+#sidebar.active ul li a {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+    margin-right:  0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #3369ad;
+    
+}
+
+#sidebar .sidebar-header strong {
+    display: none;
+    font-size: 1.8em;
+    
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #3369ad; /* borde menu izquierda*/
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.0em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #3369ad; /*Menu izquierda */
+    background: #fff;
+}
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #3369ad;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+     width: 100%;
+}
+
+
+
