@@ -10,11 +10,11 @@ $query = "DELETE FROM actions WHERE rowid=$id";
 
 // Run the query to delete record
 if( $db->query($query) ){
-	$message = "Record is deleted successfully.";
+	$message = "Action is deleted successfully.";
 }else {
-	$message = "Sorry, Record is not deleted.";
+	$message = "Sorry, Action is not deleted.";
 }
 
 echo $message;
 ?>
-<a href="list-actions.php">Back to List</a>
+<a href="list-actions.php">Back to List Actions</a>
