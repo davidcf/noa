@@ -1,242 +1,114 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 05-nov-2017, 0:47:16
-    Author     : destroyer
-*/
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700');
-
+ * Audiovisualization using the html canvas element.
+ * ©2017, Dominik Hofacker
+ * https://www.behance.net/dominikhofacker
+ * Please consider supporting this project on behance:
+ * https://www.behance.net/gallery/49260123/Web-Audio-Visualization
+ */
 
 body {
-    font-family: 'Ubuntu', sans-serif;
-    background: #fff;
+    background:#000;
+    overflow: hidden;
 }
+#freq.animateHue, body.animateHue {
+    animation-name: hue;
+    animation-duration: 500s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
 
-p {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.0em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
+    -webkit-animation-name: hue;
+    -webkit-animation-duration: 500s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: infinite;
 }
-
-a, a:hover, a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.navbar {
-    padding: 10px 2px 0px 1px;
-    background: #3369ad;
-    border: none;
-    border-radius: 4;
-    margin-bottom: 20px;
+#title, #artist, #album {
+    position: relative;
+    text-align: center;
     width: 100%;
-}
-
-.navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
-    
-}
-
-.line {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
-}
-
-i, span {
-    display: inline-block;
-}
-
-#menu a.active {
-	background:#fff;
-	color:#3369ad;
-}
-
-#menunav a:hover {
-	color:#000;
-}
-
-#menunav ul li a {
-	color:#fff;
-}
-
-.bg-4 { 
-    background-color: #3369ad;
-    color: #ffffff;
-    font-size: 0.8em;
-}
-
-#lastupdate {
-	font-family:sans-serif;
-	font-size:0.7em; 
-	font-weight: normal;
-	padding:6px 6px 6px 6px;
-}
-
-table {
-  padding: 0;
-  border-collapse: collapse; 
-  /*width: 100%;*/
-}
-
-table tr {
-    border-top: 1px solid #cccccc;
-    background-color: white;
-    margin: 0;
-    padding: 0; 
-}
-
-table tr:nth-child(2n) {
-    background-color: #f8f8f8; 
-}
-
-table tr th {
-    font-weight: bold;
-    border: 1px solid #cccccc;
-    margin: 0;
-    padding: 6px 13px; 
-}
-    
-table tr td {
-    border: 1px solid #cccccc;
-    margin: 0;
-    padding: 6px 13px; 
-}
-
-table tr th :first-child, table tr td :first-child {
-    margin-top: 0; 
-}
-    
-table tr th :last-child, table tr td :last-child {
-    margin-bottom: 0; 
-}
-
-.jumbotron {
-	padding: 10px 40px 20px 30px;
-    border-radius: 24;
-    border: 1px solid #3369ad;
-    color: #000;
-}
-
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
-.wrapper {
-    display: flex;
-    align-items: stretch;
-}
-
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #3369ad;
+    z-index: 999;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+    /*font-size: 100px;*/
     color: #fff;
-    transition: all 0.3s;
+    visibility: hidden;
+    letter-spacing: -.05em;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+	margin-bottom: 15px;
+}
+#song_info_wrapper {
+	position: absolute;
+	width: 100%;
+	text-align: center; 
 }
 
-#sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
-    text-align: center;
+#title {
+	font-size: 10vw;
 }
 
-#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
-    display: none;
+#artist {
+    font-size: 3vw;
+}
+#album {
+    font-size: 3vw;
+	/*font-size: 40px;*/
+	margin-bottom: 0;
 }
 
-#sidebar.active .sidebar-header strong {
+input, button, #loading {
+	position: absolute;
+	top: 10px;
+	left: 5px;
     display: block;
-}
-
-#sidebar ul li a {
-    text-align: left;
-}
-
-#sidebar.active ul li a {
-    padding: 20px 10px;
-    text-align: center;
-    font-size: 0.85em;
-}
-
-#sidebar.active ul li a i {
-    margin-right:  0;
-    display: block;
-    font-size: 1.8em;
-    margin-bottom: 5px;
-}
-
-#sidebar.active ul ul a {
-    padding: 10px !important;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #3369ad;
+    z-index: 999;
     
 }
 
-#sidebar .sidebar-header strong {
-    display: none;
-    font-size: 1.8em;
-    
+#playSampleButton {
+	top: 40px;
 }
 
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #3369ad; /* borde menu izquierda*/
+#useMicButton {
+	top: 70px;
 }
 
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.0em;
-    display: block;
-}
-#sidebar ul li a:hover {
-    color: #3369ad; /*Menu izquierda */
-    background: #fff;
-}
-#sidebar ul li a i {
-    margin-right: 10px;
+#loading {
+	display: inline-block;
+	top: 44px; 
+	left: 110px;
+	font-family: "Roboto", sans-serif; 
+	font-size: 12px;
 }
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #3369ad;
+html, body {
+  width:  100%;
+  height: 100%;
+  margin: 0px;
 }
 
-a.download {
-    background: #fff;
-    color: #7386D5;
+@media screen and (min-width: 1000px) {
+	#title {
+		font-size: 100px;
+	}
+
+	#artist, #album {
+		font-size: 40px;
+	}
 }
 
-a.article, a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
+@media screen and (max-width: 500px) {
+	#artist, #album {
+		font-weight: 300;
+		font-size: 4vw;
+	}
 }
 
-
-
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-#content {
-    padding: 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
-     width: 100%;
+@media screen and (max-width: 436px) {
+	#artist, #album {
+		font-weight: 300;
+		font-size: 4.5vw;
+	}
+	
+	#title {
+		
+	}
 }
-
-
-

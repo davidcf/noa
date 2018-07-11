@@ -10,15 +10,18 @@ and open the template in the editor.
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 @import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700');
-
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Share');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Alegreya Sans', sans-serif;
     background: #fff;
 }
 
 p {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Alegreya Sans', sans-serif;
     font-size: 1.0em;
     font-weight: 300;
     line-height: 1.7em;
@@ -31,6 +34,28 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
+.noa {
+  font-family: 'Russo One', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+}
+
+.noa-small {
+  font-family: 'Share', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1em;
+
+}
+
+.noa-code {
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.3em;
+  text-align: center;
+}
 .navbar {
     padding: 10px 2px 0px 1px;
     background: #000;

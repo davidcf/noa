@@ -51,8 +51,7 @@ $data = $result->fetchArray(); // set the row in $data
             <!-- Sidebar Holder -->
             <nav id='sidebar'>
                 <div class='sidebar-header'>
-                    <img src="../img/noa.png" class="img-responsive" alt="NOA Project">
-                </div>
+                    <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
                     <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
@@ -60,11 +59,15 @@ $data = $result->fetchArray(); // set the row in $data
                     <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
+                    
+                </div>
+
             </nav>
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h3 class="display-3">NOA - Configurations</h3>
+                    <h2 class="noa">NOA - Configurations</h2>
+                    <small class="noa-small">Multi-Platform Voice Assistant</small>
                 </div>            
 
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
@@ -72,7 +75,7 @@ $data = $result->fetchArray(); // set the row in $data
                         <a class="btn btn-success btn-sm" href="list-actions.php" role="button">Back to list of actions</a>
                     </ul>
                 </div>
-                <h2>Edit actions</h2>
+                <h3>Edit actions</h3>
                 <hr />
                 <p>modification of parameters of the action</p>
 

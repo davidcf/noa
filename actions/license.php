@@ -15,8 +15,7 @@
             <!-- Sidebar Holder -->
             <nav id='sidebar'>
                 <div class='sidebar-header'>
-                    <img src="../img/noa.png" class="img-responsive" alt="NOA Project">
-                </div>
+                    <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
                     <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
@@ -24,14 +23,19 @@
                     <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
+                    
+                </div>
+
             </nav>
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h3 class="display-3">License</h3>
-                </div>            
+                    <h2 class="noa">NOA - Configurations</h2>
+                    <small class="noa-small">Multi-Platform Voice Assistant</small>
+                </div>         
 
-                <p></p>
+                <h3>License</h3>
+                <hr />
 
 <pre>MIT License 
 

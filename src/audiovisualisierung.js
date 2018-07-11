@@ -188,8 +188,8 @@ function useMic()
 		rafID = window.requestAnimationFrame( updateVisualization );
 		
 		$("#title").html("NOA");
-		$("#album").html("Assistant");
-		$("#artist").html("Using");
+		$("#album").html("Voice Assistant");
+		$("#artist").html("Multi-platform");
 		onWindowResize();
 		$("#title, #artist, #album").css("visibility", "visible");
 		$("#freq, body").addClass("animateHue");
