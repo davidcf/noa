@@ -22,9 +22,9 @@ if( isset($_POST['submit_data']) ){
 	// If data inserted then set success message otherwise set error message
 	// Here $db comes from "db_connection.php"
 	if( $db->exec($query) ){
-		$message = "Action is updated successfully.";
+		$message = '<div class="alert alert-success"><strong>Info!</strong> Action is updated successfully.</div>';
 	}else{
-		$message = "Sorry, Action is not updated.";
+		$message = '<div class="alert alert-danger"><strong>Danger!</strong> Sorry, Action is not updated.</div>';
 	}
 }
 
@@ -36,92 +36,137 @@ $data = $result->fetchArray(); // set the row in $data
 ?>
 
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>NOA - Configurations</title>
+        <link rel='stylesheet' href='../css/bootstrap.min.css'>
+        <link rel='stylesheet' href='../css/styles.css'>
+    </head>
+    <body>
 
-    <title>Navbar Template for Bootstrap</title>
+        <div class='wrapper'>
+            <!-- Sidebar Holder -->
+            <nav id='sidebar'>
+                <div class='sidebar-header'>
+                    <img src="../img/noa.png" class="img-responsive" alt="NOA Project">
+                </div>
+                <ul id="menu" class="list-unstyled components">
+                    <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
+                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
+                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
+                </ul>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id='content'>
+                <div class="jumbotron">
+                    <h3 class="display-3">NOA - Configurations</h3>
+                </div>            
 
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/navbar.css" rel="stylesheet">
-  </head>
+                <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+                    <ul  class='nav navbar-nav navbar-right'>
+                        <a class="btn btn-success btn-sm" href="list-actions.php" role="button">Back to list of actions</a>
+                    </ul>
+                </div>
+                <h2>Edit actions</h2>
+                <hr />
+                <p>modification of parameters of the action</p>
 
-  <body>
-
-    <div class="container">
-
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://getbootstrap.com/docs/3.3/examples/navbar/#">N.O.A.</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="https://getbootstrap.com/docs/3.3/examples/navbar/">Default <span class="sr-only">(current)</span></a></li>
-              <li><a href="https://getbootstrap.com/docs/3.3/examples/navbar-static-top/">Static top</a></li>
-              <li><a href="https://getbootstrap.com/docs/3.3/examples/navbar-fixed-top/">Fixed top</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h2>Accions</h2>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      </div>
       <div><?php echo $message;?></div>
 
-<form action="" method="post">
-<input type="hidden" name="id" value="<?php echo $id;?>">
-  <div class="form-group">
-    <label>Mandate 1</label>
-    <input class="form-control" name="mandate1" type="text" value="<?php echo $data['mandate1'];?>" required>
-    <small id="label1help" class="form-text text-muted">Mandato 1.</small>
-  </div>
-  <div class="form-group">
-    <label>Mandate 2</label>
-    <input class="form-control" name="mandate2" type="text" value="<?php echo $data['mandate2'];?>" required="">
-    <small id="label2help" class="form-text text-muted">Mandato 2.</small>
-  </div>
-  <div class="form-group">
-    <label for="label3">Mandate 3</label>
-    <td><input class="form-control" name="mandate3" type="text" value="<?php echo $data['mandate3'];?>" required>
-    <small id="label3help" class="form-text text-muted">Mandato 3.</small>
-  </div>
-  <div class="form-group">
-    <label>Action</label>
-    <input class="form-control" name="action" type="text" value="<?php echo $data['action'];?>">
-    <small id="label4help" class="form-text text-muted">Mandato 3.</small>
-  </div>
-  <div class="form-group">
-    <label>Answer</label>
-    <input class="form-control" name="answer" type="text" value="<?php echo $data['answer'];?>" required>
-    <small id="label5help" class="form-text text-muted">answer.</small>
-  </div>
-  <input class="btn btn-primary" name="submit_data" type="submit" value="Update Action">
-</form>
+        <form action="" method="post">
+        <input type="hidden" name="id" value="<?php echo $id;?>">
+          <div class="form-group">
+            <label>Mandate 1</label>
+            <input class="form-control" name="mandate1" type="text" value="<?php echo $data['mandate1'];?>" required>
+            <small id="label1help" class="form-text text-muted">Mandato 1.</small>
+          </div>
+          <div class="form-group">
+            <label>Mandate 2</label>
+            <input class="form-control" name="mandate2" type="text" value="<?php echo $data['mandate2'];?>" required="">
+            <small id="label2help" class="form-text text-muted">Mandato 2.</small>
+          </div>
+          <div class="form-group">
+            <label for="label3">Mandate 3</label>
+            <td><input class="form-control" name="mandate3" type="text" value="<?php echo $data['mandate3'];?>" required>
+            <small id="label3help" class="form-text text-muted">Mandato 3.</small>
+          </div>
+          <div class="form-group">
+            <label>Action</label>
+            <input class="form-control" name="action" type="text" value="<?php echo $data['action'];?>">
+            <small id="label4help" class="form-text text-muted">Mandato 3.</small>
+          </div>
+          <div class="form-group">
+            <label>Answer</label>
+            <input class="form-control" name="answer" type="text" value="<?php echo $data['answer'];?>" required>
+            <small id="label5help" class="form-text text-muted">answer.</small>
+          </div>
+          <input class="btn btn-primary" name="submit_data" type="submit" value="Update Action">
+        </form>
 
+            </div>
 
+        </div>
+        <!--Footer-->
+        <footer class="container-fluid bg-4 text-center">
 
-    </div> <!-- /container -->
+            <!--Copyright-->
+            <div class="footer-copyright">
+                <div class="container-fluid">
+                    <p></p>
+                    <smal> © 2018 NOA - Project by destroyer</small>
+                    <p></p>
+                </div>
+            </div>
+            <!--/.Copyright-->
 
+        </footer>
+        <!-- Logout Modal-->
+        <div id='myModal' class='modal fade'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <button type='button' class='close' data-dismiss='modal'
+                                aria-hidden='true'>&times;</button>
+                        <h4 class='modal-title'>Information</h4>
+                    </div>
+                    <div class='modal-body'>
+                        <address>
+                            <strong>NOA</strong><br>
+                            Multi-platform Voice Assistant (MAC/Linux/Windows/Raspberry)
+                        </address>
+                        <address>
+                            <strong>Web</strong><br>
+                            https://noa-project.tk
+                        </address>
+                        <address>
+                            <strong>Github</strong><br>
+                            https://github.com/davidcf/noa.git
+                        </address>
+                        <address>
+                            <strong>Email</strong><br>
+                            <a href="mailto:#">noa-project@gmail.com</a>
+                        </address>
+                    </div>
+                    <div class='modal-footer'>
+                        <button type='button' class='btn btn-default' data-dismiss='modal'>Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src='../js/jquery-1.12.0.min.js'></script>
+        <script src='../js/bootstrap.min.js'></script>
+        <script type='text/javascript'>
+            for (var i = 0; i < document.links.length; i++) {
+                if (document.links[i].href == document.URL) {
+                    document.links[i].className = 'active';
+                }
+            }
+        </script>
+    </body>
+</html>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-  
-</body></html>

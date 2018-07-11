@@ -187,7 +187,7 @@ function useMic()
 		//start updating
 		rafID = window.requestAnimationFrame( updateVisualization );
 		
-		$("#title").html("N.O.A");
+		$("#title").html("NOA");
 		$("#album").html("Assistant");
 		$("#artist").html("Using");
 		onWindowResize();

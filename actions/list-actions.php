@@ -19,7 +19,7 @@ $result = $db->query($query);
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>N.O.A. - Configurations</title>
+        <title>NOA - Configurations</title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
     </head>
@@ -29,31 +29,30 @@ $result = $db->query($query);
             <!-- Sidebar Holder -->
             <nav id='sidebar'>
                 <div class='sidebar-header'>
-                    <img src="../img/noa.png" class="img-thumbnail" alt="N.O.A. Project">
+                    <img src="../img/noa.png" class="img-responsive" alt="NOA Project">
                 </div>
                 <ul id="menu" class="list-unstyled components">
                     <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
                     <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
-                    <li><a href="license.html"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
             </nav>
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h3 class="display-3">N.O.A.</h3>
-                    <p class="lead"><small>Multi-platform voice assistant.</small></p>
-                </div>
+                    <h3 class="display-3">NOA - Configurations</h3>
+                </div>            
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                     <ul  class='nav navbar-nav navbar-right'>
-                        <span id="lastupdate" class="label label-primary">Aug 28, 2017 12:38:24 PM</span>
+                        <a class="btn btn-success btn-sm" href="add-action.php" role="button">Add new action</a>
                     </ul>
-                </div>                
-                <h2>List of actions</h2>
-                <hr />
-                <p>List of actions to be carried out by N.O.A</p>
+                </div> 
 
+                <h2>List of actions</h2>
+                <hr />              
+                <p>List of actions to invoke with voice commands.</p>
 
                 <table class="table">
                   <thead>
@@ -90,13 +89,14 @@ $result = $db->query($query);
             <div class="footer-copyright">
                 <div class="container-fluid">
                     <p></p>
-                    <smal> © 2018 Destroyer Factory - N.O.A. Project</small>
+                    <smal> © 2018 NOA - Project by destroyer</small>
                     <p></p>
                 </div>
             </div>
             <!--/.Copyright-->
 
         </footer>
+
         <!-- Logout Modal-->
         <div id='myModal' class='modal fade'>
             <div class='modal-dialog'>
@@ -104,19 +104,24 @@ $result = $db->query($query);
                     <div class='modal-header'>
                         <button type='button' class='close' data-dismiss='modal'
                                 aria-hidden='true'>&times;</button>
-                        <h4 class='modal-title'>Información</h4>
+                        <h4 class='modal-title'>Information</h4>
                     </div>
                     <div class='modal-body'>
                         <address>
-                            <strong>Produccion Central Web / UrbanCode</strong><br>
-                            1355 Market Street, Suite 900<br>
-                            San Francisco, CA 94103<br>
-                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                            <strong>NOA</strong><br>
+                            Multi-platform Voice Assistant (MAC/Linux/Windows/Raspberry)
                         </address>
-
+                        <address>
+                            <strong>Web</strong><br>
+                            https://noa-project.tk
+                        </address>
+                        <address>
+                            <strong>Github</strong><br>
+                            https://github.com/davidcf/noa.git
+                        </address>
                         <address>
                             <strong>Email</strong><br>
-                            <a href="mailto:#">first.last@example.com</a>
+                            <a href="mailto:#">noa-project@gmail.com</a>
                         </address>
                     </div>
                     <div class='modal-footer'>
@@ -134,18 +139,5 @@ $result = $db->query($query);
                 }
             }
         </script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                (function ($) {
-                    $('#filtrar').keyup(function () {
-                        var rex = new RegExp($(this).val(), 'i');
-                        $('.buscar tr').hide();
-                        $('.buscar tr').filter(function () {
-                            return rex.test($(this).text());
-                        }).show();
-                    })
-                }(jQuery));
-            });
-        </script>   
     </body>
 </html>

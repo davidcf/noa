@@ -1,21 +1,3 @@
-<?php
-
-// Includs database connection
-include "db_connect.php";
-
-$id = $_GET['id']; // rowid from url
-
-// Prepar the deleting query according to rowid
-$query = "DELETE FROM actions WHERE rowid=$id";
-
-// Run the query to delete record
-	if( $db->exec($query) ){
-		$message = '<div class="alert alert-success"><strong>Info!</strong> Action is deleted successfully.</div>';
-	}else{
-		$message = '<div class="alert alert-danger"><strong>Danger!</strong> Sorry, Action is not deleted.</div>';
-	}
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -46,21 +28,32 @@ $query = "DELETE FROM actions WHERE rowid=$id";
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h3 class="display-3">NOA - Configurations</h3>
+                    <h3 class="display-3">License</h3>
                 </div>            
 
-                <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-                    <ul  class='nav navbar-nav navbar-right'>
-                        
-                    </ul>
-                </div> 
                 <p></p>
-                <p></p>
-      
-                <div><?php echo $message;?></div>
-                <p>
-                </p>
-<a class="btn btn-success btn-sm" href="list-actions.php" role="button">Back to list of actions</a>
+
+<pre>MIT License 
+
+Copyright (c) 2018 David Chivato de la Fuente - Destroyer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
 
             </div>
 
@@ -123,5 +116,3 @@ $query = "DELETE FROM actions WHERE rowid=$id";
         </script>
     </body>
 </html>
-
-
