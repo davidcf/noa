@@ -2,12 +2,10 @@
 
 // Includs database connection
 include "db_connect.php";
+include "languages.php";
 
 // Makes query with rowid
 $query = "SELECT rowid, * FROM actions";
-
-// Run the query and set query result in $result
-// Here $db comes from "db_connection.php" 
 $result = $db->query($query);
 
 ?>
@@ -19,7 +17,7 @@ $result = $db->query($query);
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>NOA - Configurations</title>
+        <title>NOA - <?php echo $lang["text01"];?></title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
 
@@ -33,9 +31,9 @@ $result = $db->query($query);
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
                     <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
+                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
                     
@@ -45,29 +43,28 @@ $result = $db->query($query);
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h2 class="noa">NOA - Configurations</h2>
-                    <small class="noa-small">Multi-Platform Voice Assistant</small>
+                    <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
+                    <small class="noa-small"><?php echo $lang["text04"];?></small>
                 </div>  
                 
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                     <ul  class='nav navbar-nav navbar-right'>
-                        <a class="btn btn-success btn-sm" href="add-action.php" role="button">Add new action</a>
+                        <a class="btn btn-success btn-sm" href="add-action.php" role="button"><?php echo $lang["text05"];?></a>
                     </ul>
                 </div> 
 
-                <h3>List of actions</h3>
+                <h3><?php echo $lang["text06"];?></h3>
                 <hr />              
-                <p>List of actions to invoke with voice commands.</p>
 
                 <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">Mandate 1</th>
-                      <th scope="col">Mandate 2</th>
-                      <th scope="col">Mandate 3</th>
-                      <th scope="col">Action</th>
-                      <th scope="col">Answer</th>
-                      <th scope="col">Options</th>
+                      <th scope="col"><?php echo $lang["text07"];?></th>
+                      <th scope="col"><?php echo $lang["text08"];?></th>
+                      <th scope="col"><?php echo $lang["text09"];?></th>
+                      <th scope="col"><?php echo $lang["text10"];?></th>
+                      <th scope="col"><?php echo $lang["text11"];?></th>
+                      <th scope="col"><?php echo $lang["text12"];?></th>
                     </tr>
                   </thead>
                   <tbody>

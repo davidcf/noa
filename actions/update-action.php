@@ -77,7 +77,6 @@ $data = $result->fetchArray(); // set the row in $data
                 </div>
                 <h3>Edit actions</h3>
                 <hr />
-                <p>modification of parameters of the action</p>
 
       <div><?php echo $message;?></div>
 
@@ -90,7 +89,7 @@ $data = $result->fetchArray(); // set the row in $data
           </div>
           <div class="form-group">
             <label>Mandate 2</label>
-            <input class="form-control" name="mandate2" type="text" value="<?php echo $data['mandate2'];?>" required="">
+            <input class="form-control" name="mandate2" type="text" value="<?php echo $data['mandate2'];?>" required>
             <small id="label2help" class="form-text text-muted">Mandato 2.</small>
           </div>
           <div class="form-group">
