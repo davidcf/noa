@@ -1,5 +1,5 @@
 <?php
-
+include "languages.php";
 
 $message = "";
 
@@ -45,9 +45,10 @@ $data = $result->fetchArray(); // set the row in $data
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>NOA - Configurations</title>
+        <title>NOA - <?php echo $lang["text01"];?></title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
+
     </head>
     <body>
 
@@ -57,10 +58,10 @@ $data = $result->fetchArray(); // set the row in $data
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
+                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
                     
@@ -70,11 +71,11 @@ $data = $result->fetchArray(); // set the row in $data
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h2 class="noa">NOA - Configurations</h2>
-                    <small class="noa-small">Multi-Platform Voice Assistant</small>
+                    <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
+                    <small class="noa-small"><?php echo $lang["text04"];?></small>
                 </div>            
 
-                <h3>Configurations</h3>
+                <h3><?php echo $lang["text01"];?></h3>
                 <hr />
 
       <div><?php echo $message;?></div>
@@ -82,12 +83,12 @@ $data = $result->fetchArray(); // set the row in $data
         <form action="" method="post">
         <input type="hidden" name="id" value="1">
           <div class="form-group">
-            <label>assistant_name</label>
+            <label><?php echo $lang["text16"];?></label>
             <input class="form-control" name="assistant_name" type="text" value="<?php echo $data['assistant_name'];?>" required>
-            <small id="label1help" class="form-text text-muted">assistant_name</small>
+            <small id="label1help" class="form-text text-muted"><?php echo $lang["text17"];?></small>
           </div>
           <div class="form-group">
-            <label>language</label>
+            <label><?php echo $lang["text18"];?></label>
               <select class="form-control" name="language">
                 <option value="af" <?php if($data['language']=="af") echo "selected"; ?> >Afrikaans af</option>
                 <option value="eu" <?php if($data['language']=="eu") echo "selected"; ?> >Basque eu</option>
@@ -169,21 +170,22 @@ $data = $result->fetchArray(); // set the row in $data
                 <option value="zu" <?php if($data['language']=="zu") echo "selected"; ?> >Zulu zu</option>
                 
               </select>
-            <small id="label2help" class="form-text text-muted">language</small>
+            <small id="label2help" class="form-text text-muted"><?php echo $lang["text18"];?></small>
           </div>
           <div class="form-group">
-            <label for="label3">Name</label>
+            <label for="label3"><?php echo $lang["text19"];?></label>
             <td><input class="form-control" name="name" type="text" value="<?php echo $data['name'];?>" required>
-            <small id="label3help" class="form-text text-muted">name.</small>
+            <small id="label3help" class="form-text text-muted"><?php echo $lang["text20"];?></small>
           </div>
           <div class="form-group">
-            <label>language</label>
+            <label><?php echo $lang["text21"];?></label>
               <select class="form-control" name="lang">
                 <option value="spanish" <?php if($data['lang']=="spanish") echo "selected"; ?> >Spanish</option>
                 <option value="english" <?php if($data['lang']=="english") echo "selected"; ?> >English</option>
               </select>
+             <small id="label3help" class="form-text text-muted"><?php echo $lang["text21"];?></small>
             </div>
-          <input class="btn btn-primary" name="submit_data" type="submit" value="Update Configurations">
+          <input class="btn btn-primary" name="submit_data" type="submit" value="<?php echo $lang["text22"];?>">
         </form>
 
             </div>
@@ -214,8 +216,8 @@ $data = $result->fetchArray(); // set the row in $data
                     </div>
                     <div class='modal-body'>
                         <address>
-                            <strong>NOA</strong><br>
-                            Multi-platform Voice Assistant (MAC/Linux/Windows/Raspberry)
+                            <h2 class="noa-code">NOA - Project</h2>
+                            <h4 class="noa-small-box"><?php echo $lang["text04"];?></h4>
                         </address>
                         <address>
                             <strong>Web</strong><br>

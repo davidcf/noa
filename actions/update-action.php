@@ -3,6 +3,7 @@ $message = "";
 
 // Includs database connection
 include "db_connect.php";
+include "languages.php";
 
 // Updating the table row with submited data according to rowid once form is submited 
 if( isset($_POST['submit_data']) ){
@@ -21,12 +22,13 @@ if( isset($_POST['submit_data']) ){
 	// Executes the query
 	// If data inserted then set success message otherwise set error message
 	// Here $db comes from "db_connection.php"
-	if( $db->exec($query) ){
-		$message = '<div class="alert alert-success"><strong>Info!</strong> Action is updated successfully.</div>';
+        if( $db->exec($query) ){
+		$message = '<div class="alert alert-success">'.$lang["text36"].'</div>';
 	}else{
-		$message = '<div class="alert alert-danger"><strong>Danger!</strong> Sorry, Action is not updated.</div>';
+		$message = '<div class="alert alert-danger">'.$lang["text37"].'</div>';
 	}
 }
+
 
 $id = $_GET['id']; // rowid from url
 // Prepar the query to get the row data with rowid
@@ -41,9 +43,10 @@ $data = $result->fetchArray(); // set the row in $data
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>NOA - Configurations</title>
+        <title>NOA - <?php echo $lang["text01"];?></title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
+
     </head>
     <body>
 
@@ -53,10 +56,10 @@ $data = $result->fetchArray(); // set the row in $data
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
+                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
                     
@@ -66,16 +69,16 @@ $data = $result->fetchArray(); // set the row in $data
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h2 class="noa">NOA - Configurations</h2>
-                    <small class="noa-small">Multi-Platform Voice Assistant</small>
-                </div>            
+                    <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
+                    <small class="noa-small"><?php echo $lang["text04"];?></small>
+                </div>             
 
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                     <ul  class='nav navbar-nav navbar-right'>
-                        <a class="btn btn-success btn-sm" href="list-actions.php" role="button">Back to list of actions</a>
+                        <a class="btn btn-success btn-sm" href="list-actions.php" role="button"><?php echo $lang["text23"];?></a>
                     </ul>
                 </div>
-                <h3>Edit actions</h3>
+                <h3><?php echo $lang["text24"];?></h3>
                 <hr />
 
       <div><?php echo $message;?></div>
@@ -83,31 +86,31 @@ $data = $result->fetchArray(); // set the row in $data
         <form action="" method="post">
         <input type="hidden" name="id" value="<?php echo $id;?>">
           <div class="form-group">
-            <label>Mandate 1</label>
+            <label><?php echo $lang["text07"];?></label>
             <input class="form-control" name="mandate1" type="text" value="<?php echo $data['mandate1'];?>" required>
-            <small id="label1help" class="form-text text-muted">Mandato 1.</small>
+            <small id="label1help" class="form-text text-muted"><?php echo $lang["text25"];?>.</small>
           </div>
           <div class="form-group">
-            <label>Mandate 2</label>
+            <label><?php echo $lang["text08"];?></label>
             <input class="form-control" name="mandate2" type="text" value="<?php echo $data['mandate2'];?>" required>
-            <small id="label2help" class="form-text text-muted">Mandato 2.</small>
+            <small id="label2help" class="form-text text-muted"><?php echo $lang["text25"];?></small>
           </div>
           <div class="form-group">
-            <label for="label3">Mandate 3</label>
+            <label for="label3"><?php echo $lang["text09"];?></label>
             <td><input class="form-control" name="mandate3" type="text" value="<?php echo $data['mandate3'];?>" required>
-            <small id="label3help" class="form-text text-muted">Mandato 3.</small>
+            <small id="label3help" class="form-text text-muted"><?php echo $lang["text25"];?></small>
           </div>
           <div class="form-group">
-            <label>Action</label>
+            <label><?php echo $lang["text26"];?></label>
             <input class="form-control" name="action" type="text" value="<?php echo $data['action'];?>">
-            <small id="label4help" class="form-text text-muted">Mandato 3.</small>
+            <small id="label4help" class="form-text text-muted"><?php echo $lang["text27"];?></small>
           </div>
           <div class="form-group">
-            <label>Answer</label>
+            <label><?php echo $lang["text28"];?></label>
             <input class="form-control" name="answer" type="text" value="<?php echo $data['answer'];?>" required>
-            <small id="label5help" class="form-text text-muted">answer.</small>
+            <small id="label5help" class="form-text text-muted"><?php echo $lang["text29"];?></small>
           </div>
-          <input class="btn btn-primary" name="submit_data" type="submit" value="Update Action">
+          <input class="btn btn-primary" name="submit_data" type="submit" value="<?php echo $lang["text22"];?>">
         </form>
 
             </div>
@@ -138,8 +141,8 @@ $data = $result->fetchArray(); // set the row in $data
                     </div>
                     <div class='modal-body'>
                         <address>
-                            <strong>NOA</strong><br>
-                            Multi-platform Voice Assistant (MAC/Linux/Windows/Raspberry)
+                            <h2 class="noa-code">NOA - Project</h2>
+                            <h4 class="noa-small-box"><?php echo $lang["text04"];?></h4>
                         </address>
                         <address>
                             <strong>Web</strong><br>

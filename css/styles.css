@@ -49,6 +49,14 @@ a, a:hover, a:focus {
 
 }
 
+.noa-small-box {
+  font-family: 'Share', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1em;
+  text-align: center;
+
+}
 .noa-code {
   font-family: 'Libre Barcode 128 Text', cursive;
   font-style: normal;
@@ -56,6 +64,15 @@ a, a:hover, a:focus {
   font-size: 3.3em;
   text-align: center;
 }
+
+.noa-code-front {
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6.3em;
+  text-align: center;
+}
+
 .navbar {
     padding: 10px 2px 0px 1px;
     background: #000;

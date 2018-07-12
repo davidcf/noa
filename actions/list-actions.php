@@ -30,7 +30,7 @@ $result = $db->query($query);
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
                     <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
                     <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
@@ -75,7 +75,7 @@ $result = $db->query($query);
                       <td><?php echo $row['mandate3'];?></td>
                       <td><?php echo $row['action'];?></td>
                       <td><?php echo $row['answer'];?></td>
-                          <td><a class="btn btn-success btn-sm" href="update-action.php?id=<?php echo $row['rowid'];?>" role="button">Edit</a> <a class="btn btn-danger btn-sm" href="delete-action.php?id=<?php echo $row['rowid'];?>" onclick="return confirm('Are you sure delete action?');">Delete</a></td>
+                          <td><a class="btn btn-success btn-sm" href="update-action.php?id=<?php echo $row['rowid'];?>" role="button"><?php echo $lang["text13"];?></a> <a class="btn btn-danger btn-sm" href="delete-action.php?id=<?php echo $row['rowid'];?>" onclick="return confirm('<?php echo $lang["text15"];?>');"><?php echo $lang["text14"];?></a></td>
                     </tr>
                     <?php } ?>
                   </tbody>
@@ -110,8 +110,8 @@ $result = $db->query($query);
                     </div>
                     <div class='modal-body'>
                         <address>
-                            <strong>NOA</strong><br>
-                            Multi-platform Voice Assistant (MAC/Linux/Windows/Raspberry)
+                            <h2 class="noa-code">NOA - Project</h2>
+                            <h4 class="noa-small-box"><?php echo $lang["text04"];?></h4>
                         </address>
                         <address>
                             <strong>Web</strong><br>

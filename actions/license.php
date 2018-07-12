@@ -1,13 +1,20 @@
+<?php
 
+// Includs database connection
+include "db_connect.php";
+include "languages.php";
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>NOA - Configurations</title>
+        <title>NOA - <?php echo $lang["text01"];?></title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
+
     </head>
     <body>
 
@@ -17,10 +24,10 @@
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
+                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
                     
@@ -30,11 +37,11 @@
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h2 class="noa">NOA - Configurations</h2>
-                    <small class="noa-small">Multi-Platform Voice Assistant</small>
+                    <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
+                    <small class="noa-small"><?php echo $lang["text04"];?></small>
                 </div>         
 
-                <h3>License</h3>
+                <h3><?php echo $lang["text03"];?></h3>
                 <hr />
 
 <pre>MIT License 
@@ -87,8 +94,8 @@ SOFTWARE.</pre>
                     </div>
                     <div class='modal-body'>
                         <address>
-                            <strong>NOA</strong><br>
-                            Multi-platform Voice Assistant (MAC/Linux/Windows/Raspberry)
+                            <h2 class="noa-code">NOA - Project</h2>
+                            <h4 class="noa-small-box"><?php echo $lang["text04"];?></h4>
                         </address>
                         <address>
                             <strong>Web</strong><br>

@@ -2,6 +2,7 @@
 
 // Includs database connection
 include "db_connect.php";
+include "languages.php";
 
 $id = $_GET['id']; // rowid from url
 
@@ -10,9 +11,9 @@ $query = "DELETE FROM actions WHERE rowid=$id";
 
 // Run the query to delete record
 	if( $db->exec($query) ){
-		$message = '<div class="alert alert-success"><strong>Info!</strong> Action is deleted successfully.</div>';
+		$message = '<div class="alert alert-success">'.$lang["text30"].'</div>';
 	}else{
-		$message = '<div class="alert alert-danger"><strong>Danger!</strong> Sorry, Action is not deleted.</div>';
+		$message = '<div class="alert alert-danger">'.$lang["text31"].'</div>';
 	}
 
 ?>
@@ -23,9 +24,10 @@ $query = "DELETE FROM actions WHERE rowid=$id";
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>NOA - Configurations</title>
+        <title>NOA - <?php echo $lang["text01"];?></title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
+
     </head>
     <body>
 
@@ -35,10 +37,10 @@ $query = "DELETE FROM actions WHERE rowid=$id";
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.html"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i>Configurations</a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i>Actions</a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i>License</a></li>
+                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
+                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
                 </ul>
                     
@@ -48,8 +50,8 @@ $query = "DELETE FROM actions WHERE rowid=$id";
             <!-- Page Content Holder -->
             <div id='content'>
                 <div class="jumbotron">
-                    <h2 class="noa">NOA - Configurations</h2>
-                    <small class="noa-small">Multi-Platform Voice Assistant</small>
+                    <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
+                    <small class="noa-small"><?php echo $lang["text04"];?></small>
                 </div>             
 
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
@@ -63,7 +65,7 @@ $query = "DELETE FROM actions WHERE rowid=$id";
                 <div><?php echo $message;?></div>
                 <p>
                 </p>
-<a class="btn btn-success btn-sm" href="list-actions.php" role="button">Back to list of actions</a>
+<a class="btn btn-success btn-sm" href="list-actions.php" role="button"><?php echo $lang["text23"];?></a>
 
             </div>
 
@@ -93,8 +95,8 @@ $query = "DELETE FROM actions WHERE rowid=$id";
                     </div>
                     <div class='modal-body'>
                         <address>
-                            <strong>NOA</strong><br>
-                            Multi-platform Voice Assistant (MAC/Linux/Windows/Raspberry)
+                            <h2 class="noa-code">NOA - Project</h2>
+                            <h4 class="noa-small-box"><?php echo $lang["text04"];?></h4>
                         </address>
                         <address>
                             <strong>Web</strong><br>

@@ -45,7 +45,7 @@ if( isset($_POST['submit_data']) ){
             <!-- Sidebar Holder -->
             <nav id='sidebar'>
                 <div class='sidebar-header'>
-                    <h2 class="noa-code">NOA - Project</h2>
+                    
                 <ul id="menu" class="list-unstyled components">
                     <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
@@ -64,44 +64,103 @@ if( isset($_POST['submit_data']) ){
                     <small class="noa-small"><?php echo $lang["text04"];?></small>
                 </div>            
 
-                <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-                    <ul  class='nav navbar-nav navbar-right'>
-                        <a class="btn btn-success btn-sm" href="list-actions.php" role="button"><?php echo $lang["text23"];?></a>
-                    </ul>
-                </div>
-                <h3><?php echo $lang["text34"];?></h3>
-                <hr />
 
-      <div><?php echo $message;?></div>
+<div class="card text-center">
+  <div class="card-header">
+      <br>
+  </div>
+  <div class="card-block">
+    <h2 class="card-title"><h2 class="noa-code-front">NOA - Project</h2></h2>
+    <p class="card-text"><small class="noa-small"><?php echo $lang["text04"];?></small></p>
+  </div>
 
-        <form action="add-action.php" method="post">
-          <div class="form-group">
-            <label><?php echo $lang["text07"];?></label>
-            <input class="form-control" name="mandate1" type="text" required>
-            <small id="label1help" class="form-text text-muted"><label><?php echo $lang["text25"];?></label></small>
-          </div>
-          <div class="form-group">
-            <label><?php echo $lang["text08"];?></label>
-            <input class="form-control" name="mandate2" type="text" required>
-            <small id="label2help" class="form-text text-muted"><label><?php echo $lang["text25"];?></label></small>
-          </div>
-          <div class="form-group">
-            <label><?php echo $lang["text09"];?></label>
-            <td><input class="form-control" name="mandate3" type="text" required>
-            <small id="label3help" class="form-text text-muted"><label><?php echo $lang["text25"];?></label></small>
-          </div>
-          <div class="form-group">
-            <label><?php echo $lang["text26"];?></label>
-            <input class="form-control" name="action" type="text">
-            <small id="label4help" class="form-text text-muted"><label><?php echo $lang["text27"];?></label></small>
-          </div>
-          <div class="form-group">
-            <label><?php echo $lang["text28"];?></label>
-            <input class="form-control" name="answer" type="text" required>
-            <small id="label5help" class="form-text text-muted"><label><?php echo $lang["text29"];?></label></small>
-          </div>
-          <input class="btn btn-primary" name="submit_data" type="submit" value="<?php echo $lang["text35"];?>">
-        </form>
+</div>
+                <br>
+                <br>
+                    
+                
+                
+<div class="container-fluid">
+  <div class="row align-items-center">
+      <div class="col-sm-4">
+        <div class="card text-center">
+  <div class="card-header">
+    <img src="../img/version.png" class="img-polaroid" alt="version">
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Version</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+
+</div>         
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+  <div class="card-header">
+      <img src="../img/actions.png" class="img-polaroid" alt="acciones">
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Acciones</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+</div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+  <div class="card-header">
+    <img src="../img/github.png" class="img-polaroid" alt="github">
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Github</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+</div> 
+      </div>
+  </div>
+</div>
+
+<br>
+                
+<div class="container-fluid">
+  <div class="row align-items-center">
+      <div class="col-sm-4">
+        <div class="card text-center">
+  <div class="card-header">
+    <img src="../img/www.png" class="img-polaroid" alt="version">
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Web</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+
+</div>         
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+  <div class="card-header">
+      <img src="../img/autor.png" class="img-polaroid" alt="acciones">
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Licencia</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+</div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+  <div class="card-header">
+    <img src="../img/github.png" class="img-polaroid" alt="github">
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Github</h4>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+</div> 
+      </div>
+  </div>
+</div>                
+                
+                
             </div>
 
         </div>
