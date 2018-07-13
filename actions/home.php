@@ -46,16 +46,21 @@ if( isset($_POST['submit_data']) ){
 
             <!-- Page Content Holder -->
             <div id='content'>
-                <div class="jumbotron d-flex align-items-center">
-                    <h2 class="noa-code-front">NOA - Project</h2>
-                    <small class="noa-small"><?php echo $lang["text04"];?></small>
-                    <hr class="my-4">
+                <div class="jumbotron">
+                    <div class="card text-center">
+                      <div class="card-header">
+                        <h1 class="noa-code-front">NOA - Project</h1>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo $lang["text04"];?></h5>
+                        <p class="card-text">Linux / Windows / MAC / Raspberry</p>
+                        <h3 a href="#" class="btn btn-primary">START</a></h3>
+                      </div>
+                    </div>                    
                     
-                    <p><a href="#" class="btn btn-primary">Empezar</a></p>
+                    
+                    
                 </div>            
-
-
-                <br>
                     
                 
 <div class="container-fluid">
@@ -66,19 +71,19 @@ if( isset($_POST['submit_data']) ){
                 <a href='noa-config.php' ><img src="../img/ajustes.png" class="img-polaroid" alt="ajustes"></a>
             </div>
             <div class="card-block">
-              <h4 class="card-title">Configuraciones</h4>
-              <p class="card-text">Configuraciones del asistente de voz.</p>
+              <h4 class="card-title"><?php echo $lang["text01"];?></h4>
+              <p class="card-text"><?php echo $lang["text41"];?></p>
             </div>
         </div>         
       </div>
       <div class="col-sm-4">
         <div class="card text-center">
             <div class="card-header">
-                <a href='list-actions.php'><img src="../img/actions.png" class="img-polaroid" alt="acciones"></a>
+                <a href='list-actions.php'><img src="../img/actions.png" class="img-polaroid" alt="<?php echo $lang["text02"];?>"></a>
             </div>
             <div class="card-block">
-              <h4 class="card-title">Acciones</h4>
-              <p class="card-text">Acciones que realiza el asistente de voz.</p>
+              <h4 class="card-title"><?php echo $lang["text02"];?></h4>
+              <p class="card-text"><?php echo $lang["text42"];?></p>
             </div>
         </div>
       </div>
@@ -88,8 +93,8 @@ if( isset($_POST['submit_data']) ){
                 <a href='license.php'><img src="../img/autor.png" class="img-polaroid" alt="Licencia"></a>
             </div>
             <div class="card-block">
-              <h4 class="card-title">Licencia</h4>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h4 class="card-title"><?php echo $lang["text03"];?></h4>
+              <p class="card-text">MIT License - Copyright (c) 2018 Destroyer</p>
             </div>
         </div>
       </div>
@@ -107,7 +112,7 @@ if( isset($_POST['submit_data']) ){
             </div>
             <div class="card-block">
               <h4 class="card-title">Web</h4>
-              <p class="card-text">Pagina web del proyecto</p>
+              <p class="card-text"><?php echo $lang["text43"];?></p>
             </div>
         </div>         
       </div>
@@ -118,7 +123,7 @@ if( isset($_POST['submit_data']) ){
             </div>
             <div class="card-block">
               <h4 class="card-title">Github</h4>
-              <p class="card-text">Repositorio del código fuente</p>
+              <p class="card-text"><?php echo $lang["text44"];?></p>
             </div>
         </div> 
       </div>
@@ -129,7 +134,7 @@ if( isset($_POST['submit_data']) ){
             </div>
             <div class="card-block">
               <h4 class="card-title">Version</h4>
-              <p class="card-text">Ultima Release disponible.</p>
+              <p class="card-text"><?php echo $lang["text45"];?>.</p>
             </div>
         </div>         
       </div>
