@@ -1,5 +1,6 @@
 <?php
 
 $lang = parse_ini_file("spanish.po");
-//print_r($lang["text01"]);
+$ver = parse_ini_file("../VERSION");
+//print_r($lang = parse_ini_file("spanish.po"););
 ?>

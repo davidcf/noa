@@ -37,84 +37,61 @@ if( isset($_POST['submit_data']) ){
         <title>NOA - <?php echo $lang["text01"];?></title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
-
+        <link rel="icon" type="image/png" href="../img/code.png" />
     </head>
     <body>
 
         <div class='wrapper'>
             <!-- Sidebar Holder -->
-            <nav id='sidebar'>
-                <div class='sidebar-header'>
-                    
-                <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-                    <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
-                    <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
-                </ul>
-                    
-                </div>
 
-            </nav>
             <!-- Page Content Holder -->
             <div id='content'>
-                <div class="jumbotron">
-                    <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
+                <div class="jumbotron d-flex align-items-center">
+                    <h2 class="noa-code-front">NOA - Project</h2>
                     <small class="noa-small"><?php echo $lang["text04"];?></small>
+                    <hr class="my-4">
+                    
+                    <p><a href="#" class="btn btn-primary">Empezar</a></p>
                 </div>            
 
 
-<div class="card text-center">
-  <div class="card-header">
-      <br>
-  </div>
-  <div class="card-block">
-    <h2 class="card-title"><h2 class="noa-code-front">NOA - Project</h2></h2>
-    <p class="card-text"><small class="noa-small"><?php echo $lang["text04"];?></small></p>
-  </div>
-
-</div>
-                <br>
                 <br>
                     
-                
                 
 <div class="container-fluid">
   <div class="row align-items-center">
       <div class="col-sm-4">
         <div class="card text-center">
-  <div class="card-header">
-    <img src="../img/version.png" class="img-polaroid" alt="version">
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Version</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-
-</div>         
+            <div class="card-header">
+                <a href='noa-config.php' ><img src="../img/ajustes.png" class="img-polaroid" alt="ajustes"></a>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Configuraciones</h4>
+              <p class="card-text">Configuraciones del asistente de voz.</p>
+            </div>
+        </div>         
       </div>
       <div class="col-sm-4">
         <div class="card text-center">
-  <div class="card-header">
-      <img src="../img/actions.png" class="img-polaroid" alt="acciones">
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Acciones</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-</div>
+            <div class="card-header">
+                <a href='list-actions.php'><img src="../img/actions.png" class="img-polaroid" alt="acciones"></a>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Acciones</h4>
+              <p class="card-text">Acciones que realiza el asistente de voz.</p>
+            </div>
+        </div>
       </div>
       <div class="col-sm-4">
-        <div class="card text-center">
-  <div class="card-header">
-    <img src="../img/github.png" class="img-polaroid" alt="github">
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Github</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-</div> 
+		<div class="card text-center">
+            <div class="card-header">
+                <a href='license.php'><img src="../img/autor.png" class="img-polaroid" alt="Licencia"></a>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Licencia</h4>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
       </div>
   </div>
 </div>
@@ -125,40 +102,39 @@ if( isset($_POST['submit_data']) ){
   <div class="row align-items-center">
       <div class="col-sm-4">
         <div class="card text-center">
-  <div class="card-header">
-    <img src="../img/www.png" class="img-polaroid" alt="version">
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Web</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-
-</div>         
+            <div class="card-header">
+              <a href='https://noa-project.tk' target='_blank'><img src="../img/www.png" class="img-polaroid" alt="version"></a>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Web</h4>
+              <p class="card-text">Pagina web del proyecto</p>
+            </div>
+        </div>         
       </div>
       <div class="col-sm-4">
         <div class="card text-center">
-  <div class="card-header">
-      <img src="../img/autor.png" class="img-polaroid" alt="acciones">
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Licencia</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-</div>
+            <div class="card-header">
+              <a href='https://github.com/davidcf/noa' target='_blank'><img src="../img/github.png" class="img-polaroid" alt="github"></a>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Github</h4>
+              <p class="card-text">Repositorio del código fuente</p>
+            </div>
+        </div> 
       </div>
       <div class="col-sm-4">
-        <div class="card text-center">
-  <div class="card-header">
-    <img src="../img/github.png" class="img-polaroid" alt="github">
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Github</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  </div>
-</div> 
+		<div class="card text-center">
+            <div class="card-header">
+                <a href='#myModal' data-toggle='modal' ><img src="../img/version.png" class="img-polaroid" alt="version"></a>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Version</h4>
+              <p class="card-text">Ultima Release disponible.</p>
+            </div>
+        </div>         
       </div>
   </div>
-</div>                
+</div>             
                 
                 
             </div>
@@ -171,7 +147,7 @@ if( isset($_POST['submit_data']) ){
             <div class="footer-copyright">
                 <div class="container-fluid">
                     <p></p>
-                    <smal> © 2018 NOA - Project by destroyer</small>
+                    <smal> © 2018 NOA - Project by destroyer / Icons by <a href='https://icons8.com/' target="_blank">ICONS8</a></small>
                     <p></p>
                 </div>
             </div>
@@ -193,16 +169,8 @@ if( isset($_POST['submit_data']) ){
                             <h4 class="noa-small-box"><?php echo $lang["text04"];?></h4>
                         </address>
                         <address>
-                            <strong>Web</strong><br>
-                            https://noa-project.tk
-                        </address>
-                        <address>
-                            <strong>Github</strong><br>
-                            https://github.com/davidcf/noa.git
-                        </address>
-                        <address>
-                            <strong>Email</strong><br>
-                            <a href="mailto:#">noa-project@gmail.com</a>
+                            <h4 class="noa-version">Version</h4>
+                            <h3 class="noa-version"><?php echo $ver["VERSION"];?></h3>
                         </address>
                     </div>
                     <div class='modal-footer'>

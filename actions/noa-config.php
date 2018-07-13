@@ -48,7 +48,7 @@ $data = $result->fetchArray(); // set the row in $data
         <title>NOA - <?php echo $lang["text01"];?></title>
         <link rel='stylesheet' href='../css/bootstrap.min.css'>
         <link rel='stylesheet' href='../css/styles.css'>
-
+        <link rel="icon" type="image/png" href="../img/code.png" />
     </head>
     <body>
 
@@ -62,7 +62,9 @@ $data = $result->fetchArray(); // set the row in $data
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
                     <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
                     <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
-                    <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i>Info</a></li>
+                    <li><a href="https://noa-project.tk" target="_blank"><i class="glyphicon glyphicon-cloud"></i>Web</a></li>
+                    <li><a href="https://github.com/davidcf/noa" target="_blank"><i class="glyphicon glyphicon-download"></i>Github</a></li>
+                    <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i><?php echo $lang["text39"];?></a></li>
                 </ul>
                     
                 </div>
@@ -220,16 +222,8 @@ $data = $result->fetchArray(); // set the row in $data
                             <h4 class="noa-small-box"><?php echo $lang["text04"];?></h4>
                         </address>
                         <address>
-                            <strong>Web</strong><br>
-                            https://noa-project.tk
-                        </address>
-                        <address>
-                            <strong>Github</strong><br>
-                            https://github.com/davidcf/noa.git
-                        </address>
-                        <address>
-                            <strong>Email</strong><br>
-                            <a href="mailto:#">noa-project@gmail.com</a>
+                            <h4 class="noa-version">Version</h4>
+                            <h3 class="noa-version"><?php echo $ver["VERSION"];?></h3>
                         </address>
                     </div>
                     <div class='modal-footer'>
