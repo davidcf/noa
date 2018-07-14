@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<!--
-Audiovisualization using the html canvas element.
-©2017, Dominik Hofacker
-https://www.behance.net/dominikhofacker
-Please consider supporting this project on behance:
-https://www.behance.net/gallery/49260123/Web-Audio-Visualization
--->
-    <head>
-        <meta charset="utf-8">
-        <meta content='IE=8' http-equiv='X-UA-Compatible'>
-        <title>Frequcency analysis using HTML5 Audio and Web Audio API</title>
-        <meta name="viewport" content="width=device-width">
-        <!-- Das favicon.ico und das apple-touch-icon.png in das root Verzeichnis -->
-        <link rel="stylesheet" href="./css/style.css">
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css' />
-        <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="./src/bufferloader.js"></script>
-        <script src="./src/id3-minimized.js"></script>
-        <script src="./src/audiovisualisierung.js"></script>
-    </head>
-    <body>	
+<html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+</head>
+<body>
 <script>
-useMic()
-</script>	   
-        <div id="song_info_wrapper">
-        	<div id="artist">gggggggg</div>
-			<div id="title">Unknown Titel</div>
-			<div id="album">Unknown Album</div>
-		</div>
-        <canvas id="freq" width="1024" height="525"></canvas>
-    </body>
+function openPage(voz){
+window.open('hector.php?voz='+voz);}
+
+if (annyang) {
+annyang.setLanguage('es-ES');
+var commands = {
+ 'Antonia *voz' : openPage,
+ 'Manolo *voz' : openPage
+ };
+annyang.addCommands(commands);
+annyang.start();
+}
+</script>
+</body>
 </html>

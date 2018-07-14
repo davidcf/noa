@@ -1,6 +1,6 @@
 <?php
 // Database name
-$database_name = "noa.db";
+$database_name = "config/noa.config";
 
 // Database Connection
 $db = new SQLite3($database_name);

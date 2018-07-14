@@ -1,16 +1,10 @@
 <?php
 
 // Includs database connection
-include "db_connect.php";
-include "languages.php";
-
-// Makes query with rowid
-$query = "SELECT rowid, * FROM actions";
-$result = $db->query($query);
+include "noa-db_connect.php";
+include "noa-languages.php";
 
 ?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,9 +12,9 @@ $result = $db->query($query);
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>NOA - <?php echo $lang["text01"];?></title>
-        <link rel='stylesheet' href='../css/bootstrap.min.css'>
-        <link rel='stylesheet' href='../css/styles.css'>
-        <link rel="icon" type="image/png" href="../img/code.png" />
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <link rel='stylesheet' href='css/styles.css'>
+        <link rel="icon" type="image/png" href="img/code.png" />
     </head>
     <body>
 
@@ -30,10 +24,10 @@ $result = $db->query($query);
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="index.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
+                    <li><a href="noa-list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="noa-license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href="https://noa-project.tk" target="_blank"><i class="glyphicon glyphicon-cloud"></i>Web</a></li>
                     <li><a href="https://github.com/davidcf/noa" target="_blank"><i class="glyphicon glyphicon-download"></i>Github</a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i><?php echo $lang["text39"];?></a></li>
@@ -47,41 +41,32 @@ $result = $db->query($query);
                 <div class="jumbotron">
                     <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
                     <small class="noa-small"><?php echo $lang["text04"];?></small>
-                </div>  
-                
-                <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-                    <ul  class='nav navbar-nav navbar-right'>
-                        <a class="btn btn-success btn-sm" href="add-action.php" role="button"><?php echo $lang["text05"];?></a>
-                    </ul>
-                </div> 
+                </div>         
 
-                <h3><?php echo $lang["text06"];?></h3>
-                <hr />              
+                <h3><?php echo $lang["text03"];?></h3>
+                <hr />
 
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col"><?php echo $lang["text07"];?></th>
-                      <th scope="col"><?php echo $lang["text08"];?></th>
-                      <th scope="col"><?php echo $lang["text09"];?></th>
-                      <th scope="col"><?php echo $lang["text10"];?></th>
-                      <th scope="col"><?php echo $lang["text11"];?></th>
-                      <th scope="col"><?php echo $lang["text12"];?></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <?php while($row = $result->fetchArray()) {?>
-                    <tr>
-                      <td><?php echo $row['mandate1'];?></td>
-                      <td><?php echo $row['mandate2'];?></td>
-                      <td><?php echo $row['mandate3'];?></td>
-                      <td><?php echo $row['action'];?></td>
-                      <td><?php echo $row['answer'];?></td>
-                          <td><a class="btn btn-success btn-sm" href="update-action.php?id=<?php echo $row['rowid'];?>" role="button"><?php echo $lang["text13"];?></a> <a class="btn btn-danger btn-sm" href="delete-action.php?id=<?php echo $row['rowid'];?>" onclick="return confirm('<?php echo $lang["text15"];?>');"><?php echo $lang["text14"];?></a></td>
-                    </tr>
-                    <?php } ?>
-                  </tbody>
-                </table>
+<pre>MIT License 
+
+Copyright (c) 2018 David Chivato de la Fuente - Destroyer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
 
             </div>
 
@@ -100,7 +85,6 @@ $result = $db->query($query);
             <!--/.Copyright-->
 
         </footer>
-
         <!-- Logout Modal-->
         <div id='myModal' class='modal fade'>
             <div class='modal-dialog'>
@@ -126,8 +110,8 @@ $result = $db->query($query);
                 </div>
             </div>
         </div>
-        <script src='../js/jquery-1.12.0.min.js'></script>
-        <script src='../js/bootstrap.min.js'></script>
+        <script src='js/jquery-min.js'></script>
+        <script src='js/bootstrap.min.js'></script>
         <script type='text/javascript'>
             for (var i = 0; i < document.links.length; i++) {
                 if (document.links[i].href == document.URL) {

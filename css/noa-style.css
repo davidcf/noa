@@ -1,10 +1,10 @@
-/*
- * Audiovisualization using the html canvas element.
- * ©2017, Dominik Hofacker
- * https://www.behance.net/dominikhofacker
- * Please consider supporting this project on behance:
- * https://www.behance.net/gallery/49260123/Web-Audio-Visualization
- */
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Share');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
 
 body {
     background:#000;

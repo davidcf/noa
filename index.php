@@ -1,10 +1,10 @@
 <?php
-include "languages.php";
+include "noa-languages.php";
 $message = ""; // initial message 
 if( isset($_POST['submit_data']) ){
 
 	// Includs database connection
-	include "db_connect.php";
+	include "noa-db_connect.php";
         
 
 	// Gets the data from post
@@ -35,9 +35,9 @@ if( isset($_POST['submit_data']) ){
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>NOA - <?php echo $lang["text01"];?></title>
-        <link rel='stylesheet' href='../css/bootstrap.min.css'>
-        <link rel='stylesheet' href='../css/styles.css'>
-        <link rel="icon" type="image/png" href="../img/code.png" />
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <link rel='stylesheet' href='css/styles.css'>
+        <link rel="icon" type="image/png" href="img/code.png" />
     </head>
     <body>
 
@@ -54,7 +54,7 @@ if( isset($_POST['submit_data']) ){
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $lang["text04"];?></h5>
                         <p class="card-text">Linux / Windows / MAC / Raspberry</p>
-                        <h3 a href="#" class="btn btn-primary">START</a></h3>
+                        <h3> <a href="noa.php" target="_blank" class="btn btn-primary">START</a></h3>
                       </div>
                     </div>                    
                     
@@ -68,7 +68,7 @@ if( isset($_POST['submit_data']) ){
       <div class="col-sm-4">
         <div class="card text-center">
             <div class="card-header">
-                <a href='noa-config.php' ><img src="../img/ajustes.png" class="img-polaroid" alt="ajustes"></a>
+                <a href='noa-config.php' ><img src="img/ajustes.png" class="img-polaroid" alt="ajustes"></a>
             </div>
             <div class="card-block">
               <h4 class="card-title"><?php echo $lang["text01"];?></h4>
@@ -79,7 +79,7 @@ if( isset($_POST['submit_data']) ){
       <div class="col-sm-4">
         <div class="card text-center">
             <div class="card-header">
-                <a href='list-actions.php'><img src="../img/actions.png" class="img-polaroid" alt="<?php echo $lang["text02"];?>"></a>
+                <a href='noa-list-actions.php'><img src="img/actions.png" class="img-polaroid" alt="<?php echo $lang["text02"];?>"></a>
             </div>
             <div class="card-block">
               <h4 class="card-title"><?php echo $lang["text02"];?></h4>
@@ -90,7 +90,7 @@ if( isset($_POST['submit_data']) ){
       <div class="col-sm-4">
 		<div class="card text-center">
             <div class="card-header">
-                <a href='license.php'><img src="../img/autor.png" class="img-polaroid" alt="Licencia"></a>
+                <a href='noa-license.php'><img src="img/autor.png" class="img-polaroid" alt="Licencia"></a>
             </div>
             <div class="card-block">
               <h4 class="card-title"><?php echo $lang["text03"];?></h4>
@@ -108,7 +108,7 @@ if( isset($_POST['submit_data']) ){
       <div class="col-sm-4">
         <div class="card text-center">
             <div class="card-header">
-              <a href='https://noa-project.tk' target='_blank'><img src="../img/www.png" class="img-polaroid" alt="version"></a>
+              <a href='https://noa-project.tk' target='_blank'><img src="img/www.png" class="img-polaroid" alt="version"></a>
             </div>
             <div class="card-block">
               <h4 class="card-title">Web</h4>
@@ -119,7 +119,7 @@ if( isset($_POST['submit_data']) ){
       <div class="col-sm-4">
         <div class="card text-center">
             <div class="card-header">
-              <a href='https://github.com/davidcf/noa' target='_blank'><img src="../img/github.png" class="img-polaroid" alt="github"></a>
+              <a href='https://github.com/davidcf/noa' target='_blank'><img src="img/github.png" class="img-polaroid" alt="github"></a>
             </div>
             <div class="card-block">
               <h4 class="card-title">Github</h4>
@@ -130,7 +130,7 @@ if( isset($_POST['submit_data']) ){
       <div class="col-sm-4">
 		<div class="card text-center">
             <div class="card-header">
-                <a href='#myModal' data-toggle='modal' ><img src="../img/version.png" class="img-polaroid" alt="version"></a>
+                <a href='#myModal' data-toggle='modal' ><img src="img/version.png" class="img-polaroid" alt="version"></a>
             </div>
             <div class="card-block">
               <h4 class="card-title">Version</h4>
@@ -184,8 +184,8 @@ if( isset($_POST['submit_data']) ){
                 </div>
             </div>
         </div>
-        <script src='../js/jquery-1.12.0.min.js'></script>
-        <script src='../js/bootstrap.min.js'></script>
+        <script src='js/jquery-min.js'></script>
+        <script src='js/bootstrap.min.js'></script>
         <script type='text/javascript'>
             for (var i = 0; i < document.links.length; i++) {
                 if (document.links[i].href == document.URL) {

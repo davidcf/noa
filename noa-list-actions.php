@@ -1,22 +1,15 @@
 <?php
 
 // Includs database connection
-include "db_connect.php";
-include "languages.php";
+include "noa-db_connect.php";
+include "noa-languages.php";
 
-$id = $_GET['id']; // rowid from url
-
-// Prepar the deleting query according to rowid
-$query = "DELETE FROM actions WHERE rowid=$id";
-
-// Run the query to delete record
-	if( $db->exec($query) ){
-		$message = '<div class="alert alert-success">'.$lang["text30"].'</div>';
-	}else{
-		$message = '<div class="alert alert-danger">'.$lang["text31"].'</div>';
-	}
+// Makes query with rowid
+$query = "SELECT rowid, * FROM actions";
+$result = $db->query($query);
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -25,10 +18,9 @@ $query = "DELETE FROM actions WHERE rowid=$id";
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>NOA - <?php echo $lang["text01"];?></title>
-        <link rel='stylesheet' href='../css/bootstrap.min.css'>
-        <link rel='stylesheet' href='../css/styles.css'>
-        <link rel="icon" type="image/png" href="../img/code.png" />
-
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <link rel='stylesheet' href='css/styles.css'>
+        <link rel="icon" type="image/png" href="img/code.png" />
     </head>
     <body>
 
@@ -38,10 +30,10 @@ $query = "DELETE FROM actions WHERE rowid=$id";
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="index.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
+                    <li><a href="noa-list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="noa-license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href="https://noa-project.tk" target="_blank"><i class="glyphicon glyphicon-cloud"></i>Web</a></li>
                     <li><a href="https://github.com/davidcf/noa" target="_blank"><i class="glyphicon glyphicon-download"></i>Github</a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i><?php echo $lang["text39"];?></a></li>
@@ -55,20 +47,41 @@ $query = "DELETE FROM actions WHERE rowid=$id";
                 <div class="jumbotron">
                     <h2 class="noa">NOA - <?php echo $lang["text01"];?></h2>
                     <small class="noa-small"><?php echo $lang["text04"];?></small>
-                </div>             
-
+                </div>  
+                
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                     <ul  class='nav navbar-nav navbar-right'>
-                        
+                        <a class="btn btn-success btn-sm" href="noa-add-action.php" role="button"><?php echo $lang["text05"];?></a>
                     </ul>
                 </div> 
-                <p></p>
-                <p></p>
-      
-                <div><?php echo $message;?></div>
-                <p>
-                </p>
-<a class="btn btn-success btn-sm" href="list-actions.php" role="button"><?php echo $lang["text23"];?></a>
+
+                <h3><?php echo $lang["text06"];?></h3>
+                <hr />              
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"><?php echo $lang["text07"];?></th>
+                      <th scope="col"><?php echo $lang["text08"];?></th>
+                      <th scope="col"><?php echo $lang["text09"];?></th>
+                      <th scope="col"><?php echo $lang["text10"];?></th>
+                      <th scope="col"><?php echo $lang["text11"];?></th>
+                      <th scope="col"><?php echo $lang["text12"];?></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php while($row = $result->fetchArray()) {?>
+                    <tr>
+                      <td><?php echo $row['mandate1'];?></td>
+                      <td><?php echo $row['mandate2'];?></td>
+                      <td><?php echo $row['mandate3'];?></td>
+                      <td><?php echo $row['action'];?></td>
+                      <td><?php echo $row['answer'];?></td>
+                          <td><a class="btn btn-success btn-sm" href="noa-update-action.php?id=<?php echo $row['rowid'];?>" role="button"><?php echo $lang["text13"];?></a> <a class="btn btn-danger btn-sm" href="noa-delete-action.php?id=<?php echo $row['rowid'];?>" onclick="return confirm('<?php echo $lang["text15"];?>');"><?php echo $lang["text14"];?></a></td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
 
             </div>
 
@@ -87,6 +100,7 @@ $query = "DELETE FROM actions WHERE rowid=$id";
             <!--/.Copyright-->
 
         </footer>
+
         <!-- Logout Modal-->
         <div id='myModal' class='modal fade'>
             <div class='modal-dialog'>
@@ -112,8 +126,8 @@ $query = "DELETE FROM actions WHERE rowid=$id";
                 </div>
             </div>
         </div>
-        <script src='../js/jquery-1.12.0.min.js'></script>
-        <script src='../js/bootstrap.min.js'></script>
+        <script src='js/jquery-min.js'></script>
+        <script src='js/bootstrap.min.js'></script>
         <script type='text/javascript'>
             for (var i = 0; i < document.links.length; i++) {
                 if (document.links[i].href == document.URL) {
@@ -123,5 +137,3 @@ $query = "DELETE FROM actions WHERE rowid=$id";
         </script>
     </body>
 </html>
-
-

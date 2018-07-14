@@ -1,10 +1,10 @@
 <?php
-include "languages.php";
+include "noa-languages.php";
 $message = ""; // initial message 
 if( isset($_POST['submit_data']) ){
 
 	// Includs database connection
-	include "db_connect.php";
+	include "noa-db_connect.php";
         
 
 	// Gets the data from post
@@ -35,10 +35,9 @@ if( isset($_POST['submit_data']) ){
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>NOA - <?php echo $lang["text01"];?></title>
-        <link rel='stylesheet' href='../css/bootstrap.min.css'>
-        <link rel='stylesheet' href='../css/styles.css'>
-        <link rel="icon" type="image/png" href="../img/code.png" />
-
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <link rel='stylesheet' href='css/styles.css'>
+        <link rel="icon" type="image/png" href="img/code.png" />
     </head>
     <body>
 
@@ -48,10 +47,10 @@ if( isset($_POST['submit_data']) ){
                 <div class='sidebar-header'>
                     <h2 class="noa-code">NOA - Project</h2>
                 <ul id="menu" class="list-unstyled components">
-                    <li><a href="home.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+                    <li><a href="index.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
                     <li><a href="noa-config.php"><i class="glyphicon glyphicon-list-alt"></i><?php echo $lang["text01"];?></a></li>
-                    <li><a href="list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
-                    <li><a href="license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
+                    <li><a href="noa-list-actions.php"><i class="glyphicon glyphicon-tasks"></i><?php echo $lang["text02"];?></a></li>
+                    <li><a href="noa-license.php"><i class="glyphicon glyphicon-copyright-mark"></i><?php echo $lang["text03"];?></a></li>
                     <li><a href="https://noa-project.tk" target="_blank"><i class="glyphicon glyphicon-cloud"></i>Web</a></li>
                     <li><a href="https://github.com/davidcf/noa" target="_blank"><i class="glyphicon glyphicon-download"></i>Github</a></li>
                     <li><a href='#myModal' data-toggle='modal'><i class="glyphicon glyphicon-briefcase"></i><?php echo $lang["text39"];?></a></li>
@@ -69,7 +68,7 @@ if( isset($_POST['submit_data']) ){
 
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                     <ul  class='nav navbar-nav navbar-right'>
-                        <a class="btn btn-success btn-sm" href="list-actions.php" role="button"><?php echo $lang["text23"];?></a>
+                        <a class="btn btn-success btn-sm" href="noa-list-actions.php" role="button"><?php echo $lang["text23"];?></a>
                     </ul>
                 </div>
                 <h3><?php echo $lang["text34"];?></h3>
@@ -77,7 +76,7 @@ if( isset($_POST['submit_data']) ){
 
       <div><?php echo $message;?></div>
 
-        <form action="add-action.php" method="post">
+        <form action="noa-add-action.php" method="post">
           <div class="form-group">
             <label><?php echo $lang["text07"];?></label>
             <input class="form-control" name="mandate1" type="text" required>
@@ -147,8 +146,8 @@ if( isset($_POST['submit_data']) ){
                 </div>
             </div>
         </div>
-        <script src='../js/jquery-1.12.0.min.js'></script>
-        <script src='../js/bootstrap.min.js'></script>
+        <script src='js/jquery-min.js'></script>
+        <script src='js/bootstrap.min.js'></script>
         <script type='text/javascript'>
             for (var i = 0; i < document.links.length; i++) {
                 if (document.links[i].href == document.URL) {
