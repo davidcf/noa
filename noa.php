@@ -1,38 +1,75 @@
+<?php
+   // load share code
+   include "noa-share.php";
+   
+   //Load language and assistan name.
+   $query = "SELECT * FROM configurations";
+   $result = $db->query($query);
+   $data = $result->fetchArray();
+   $name= $data['assistant_name'];
+   $language = $data['language'];
+   ?>
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta content='IE=8' http-equiv='X-UA-Compatible'>
-        <title>NOA - Project</title>
-        <meta name="viewport" content="width=device-width">
-        <!-- Das favicon.ico und das apple-touch-icon.png in das root Verzeichnis -->
-        <link rel="stylesheet" href="css/noa-style.css">
-        <script src="js/jquery-min.js"></script>
-        <script src="src/bufferloader.js"></script>
-        <script src="src/id3-minimized.js"></script>
-        <script src="src/audiovisualisierung.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
-    </head>
-    <body>	
-<script>
-useMic()
+<head>
+   <meta charset="utf-8">
+   <meta content='IE=8' http-equiv='X-UA-Compatible'>
+   <title>NOA - Assitant</title>
+   <meta name="viewport" content="width=device-width">
+   <link rel="icon" type="image/png" href="img/noa.png" />
+   <script src="js/jquery-min.js"></script>
+   <script src='js/noa.js'></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+   <link href="css/jquery.terminal.css" rel="stylesheet"/>
+</head>
+<body>
 
-function openPage(voz){
-window.open('noa-process-voice.php?voz='+voz);}
+   <script>
+      
+    function PhpExecuteParam (voz,path) {
+        document.write('Reconocido: '+voz+' Para ejecutar el Plugin: ' + path + '<br>');
+        $.ajax({
+            url: 'noa-process-voice2.php',
+            data: "voz="+voz,
+            dataType: 'text',
+            success: function(data)
+                {
+                    Say (path);            
+                 },
+            error: function()
+                 {
+                    Say ('Se ha producido un error al ejecutar el mandato');
+                 }
+        });
+    }
 
-if (annyang) {
-annyang.setLanguage('es-ES');
-var commands = {
- 'Antonia *voz' : openPage
- };
-annyang.addCommands(commands);
-annyang.start();
-}
-</script>	   
-        <div id="song_info_wrapper">
-        	<div id="artist">gggggggg</div>
-			<div id="title">Unknown Titel</div>
-			<div id="album">Unknown Album</div>
-		</div>
-        <canvas id="freq" width="1024" height="525"></canvas>
-    </body>
+    function PhpExecute (path) {
+        document.write('Para ejecutar el Plugin: ' + path + '<br>');
+//        $.ajax({
+//            url: 'noa-process-voice2.php',
+//            data: "voz="+voz,
+//            dataType: 'text',
+//            success: function(data)
+//                {
+//                    Say (path);            
+//                 },
+//            error: function()
+//                 {
+//                    Say ('Se ha producido un error al ejecutar el mandato');
+//                 }
+//        });
+    }
+
+      if (annyang) {
+      annyang.setLanguage('<?php echo $language;?>');
+      var commands = {
+       //'<?php echo $name;?> *voz' : function (voz){PhpExecuteParam(voz,'eres una pedorra');},
+       '<?php echo $name;?> dame *voz' : function (voz){PhpExecuteParam(voz,'eres una pedorra');},
+       '<?php echo $name;?> eres tonta' : function (){PhpExecute('eres muy tonta');}
+       };
+       //document.write(5 + 6);
+      annyang.addCommands(commands);
+      annyang.start();
+      }
+   </script>	  
+</body>
 </html>

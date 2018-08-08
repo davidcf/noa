@@ -10,10 +10,9 @@ and open the template in the editor.
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 @import url('http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
 @import url('https://fonts.googleapis.com/css?family=Share');
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
+
 
 body {
     font-family: 'Alegreya Sans', sans-serif;
@@ -45,7 +44,8 @@ a, a:hover, a:focus {
   font-family: 'Share', cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: 1.6em;
+  text-align: center;
 
 }
 
@@ -61,10 +61,25 @@ a, a:hover, a:focus {
   font-family: 'Libre Barcode 128 Text', cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 3.3em;
-  text-align: center;
+  font-size: 2.5em;
+
 }
 
+.noa-code-nav {
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4em;
+
+}
+
+.noa-code-copyright{
+  font-family: 'Share', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8em;
+
+}
 .noa-code-front {
   font-family: 'Libre Barcode 128 Text', cursive;
   font-style: normal;

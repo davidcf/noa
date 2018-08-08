@@ -166,7 +166,7 @@ function playSample() {
 	$("button, input").prop("disabled",true);
 }
 
-function useMic() 	
+function useMic(name) 	
 {
 	"use strict";
 	if (!navigator.mediaDevices.getUserMedia) {
@@ -187,7 +187,7 @@ function useMic()
 		//start updating
 		rafID = window.requestAnimationFrame( updateVisualization );
 		
-		$("#title").html("NOA");
+		$("#title").html(name);
 		$("#album").html("Voice Assistant");
 		$("#artist").html("Multi-platform");
 		onWindowResize();

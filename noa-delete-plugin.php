@@ -2,13 +2,16 @@
    // load share code
    include "noa-share.php";
    
-   $id = $_GET['id'];
-   $query = "DELETE FROM actions WHERE rowid=$id";
-
-   if( $db->exec($query) ){
-   	$message = '<div class="alert alert-success">'.$lang["text30"].'</div>';
+   $id = $_GET['id']; 
+   $query = "SELECT * FROM configurations";
+   $result = $db->query($query);
+   $data = $result->fetchArray();
+   $plugins= $data['pathscripts'];
+   
+   if(exec('rm -r ' . $plugins . '/'. $id)){
+   	$message = '<div class="alert alert-danger">'.$lang["text61"].'</div>';
    }else{
-   	$message = '<div class="alert alert-danger">'.$lang["text31"].'</div>';
+   	$message = '<div class="alert alert-success">'.$lang["text60"].'</div>';
    }
    
    ?>
@@ -60,7 +63,7 @@
             <div><?php echo $message;?></div>
             <p>
             </p>
-            <a class="btn btn-secondary btn-sm" href="noa-list-actions.php" role="button"><?php echo $lang["text23"];?></a>
+            <a class="btn btn-secondary btn-sm" href="noa-upload-plugin.php" role="button"><?php echo $lang["text59"];?></a>
          </div>
       </div>
       <script src='js/jquery-min.js'></script>
