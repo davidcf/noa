@@ -33,12 +33,12 @@
             dataType: 'text',
             success: function(data)
                 {
-                    Say (path);            
-                 },
+                  Say (path);            
+                },
             error: function()
-                 {
-                    Say ('Se ha producido un error al ejecutar el mandato');
-                 }
+                {
+                  Say ('Se ha producido un error al ejecutar el mandato');
+                }
         });
     }
 
